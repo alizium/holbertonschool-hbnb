@@ -45,4 +45,7 @@ def create_app(config_name='default'):
     api.add_namespace(reviews_ns, path='/api/v1/reviews')
     api.add_namespace(auth_ns, path='/api/v1/auth')
 
+    from app.web.views import web
+    app.register_blueprint(web)
+
     return app
