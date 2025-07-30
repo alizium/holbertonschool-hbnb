@@ -26,16 +26,16 @@ class Login(Resource):
     @api.response(401, 'Invalid credentials', error_model)
     def post(self):
         data = api.payload
-        data = api.payload
-        user = HBnBFacade().get_user_by_email(data['email'])
-        if not user or not user.check_password(data['password']):
-            api.abort(401, "Invalid credentials")
-        token = create_access_token(identity=str(user.id))
         email = data.get('email')
         password = data.get('password')
+
         if not email or not password:
-            return {'error': 'Email and password are required'}, 400
-        token = login_user(email, password)
-        if not token:
-            return {'error': 'Invalid credentials'}, 401
+            api.abort(400, "Email and password are required")
+
+        user = HBnBFacade().get_user_by_email(email)
+        if not user or not user.check_password(password):
+            api.abort(401, "Invalid credentials")
+
+        # Génère le JWT Flask
+        token = create_access_token(identity=str(user.id))
         return {'access_token': token}, 200

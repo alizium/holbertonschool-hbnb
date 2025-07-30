@@ -2,28 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Places</title>
-  <link rel="stylesheet" href="../static/css/style.css">
-  <link rel="icon" href="../static/images/icon.png">
+  <title>Available Places</title>
+  <link rel="stylesheet" href="/static/css/all.css">
+  <link rel="stylesheet" href="/static/css/index.css">
+  <link rel="icon" href="/images/icon.png">
 </head>
 <body>
-  <header>
-    <img src="../static/images/logo.png" alt="Logo" class="logo">
-    <a href="login.html" class="login-button">Login</a>
+  <header class="header">
+    <div class="logo-container">
+    <img src="images/logo.png" alt="Logo" class="logo">
+    
+  </div>
+  <a href="login.html" class="login-button">Login</a>
   </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="login.html">Login</a>
-  </nav>
   <main>
-    <h1>List of Places</h1>
+    <h1>Available Places</h1>
+    <div class="filter">
+      <label for="max-price"><b>Max Price:</b></label>
+      <select id="max-price">
+        <option value="all">All</option>
+        <option value="100">$100</option>
+        <option value="150">$150</option>
+        <option value="200">$200</option>
+      </select>
+    </div>
     <div id="places-container">
-      <!-- JavaScript will inject .place-card elements here -->
+      <!-- Cards générées par JS ou en dur pour le test -->
+      <div class="place-card">
+        <h2>Beautiful Beach House</h2>
+        <p>Price per night: $150</p>
+        <button class="details-btn">View Details</button>
+      </div>
+      <div class="place-card">
+        <h2>Cozy Cabin</h2>
+        <p>Price per night: $100</p>
+        <button class="details-btn">View Details</button>
+      </div>
+      <div class="place-card">
+        <h2>Modern Apartment</h2>
+        <p>Price per night: $200</p>
+        <button class="details-btn">View Details</button>
+      </div>
     </div>
   </main>
   <footer>
     <p>© 2025 - All rights reserved.</p>
   </footer>
-  <script src="../static/js/places.js"></script>
 </body>
 </html>

@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Add Review</title>
-  <link rel="stylesheet" href="../static/css/style.css">
-  <link rel="icon" href="../static/images/icon.png">
+    <meta charset="UTF-8">
+    <title>Add Review – hbnb</title>
+    <link rel="stylesheet" href="static/css/all.css">
+    <link rel="stylesheet" href="static/css/add_review.css">
+    <link rel="icon" href="images/icon.png">
 </head>
 <body>
-  <header>
-    <img src="../static/images/logo.png" alt="Logo" class="logo">
-    <a href="login.html" class="login-button">Login</a>
-  </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="login.html">Login</a>
-  </nav>
-  <main>
-    <h1>Add a Review</h1>
-    <form class="add-review form" id="review-form">
-      <label for="title">Title:</label>
-      <input type="text" id="title" name="title" required><br>
-      <label for="rating">Rating (1–5):</label>
-      <input type="number" id="rating" name="rating" min="1" max="5" required><br>
-      <label for="comment">Comment:</label><br>
-      <textarea id="comment" name="comment" rows="4" cols="50" required></textarea><br>
-      <button type="submit">Submit Review</button>
-    </form>
-  </main>
-  <footer>
-    <p>© 2025 - All rights reserved.</p>
-  </footer>
-  <script src="../static/js/review.js"></script>
+    <header class="header">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Logo" class="logo">
+            <span class="brand">hbnb</span>
+        </div>
+        <a href="login.html" class="login-button">Login</a>
+    </header>
+    <main>
+        <h1 class="add-review-title">Add a Review</h1>
+        <form class="add-review-form" action="#" method="POST">
+            <div class="form-group">
+                <label for="review">Your Review:</label>
+                <textarea id="review" name="review" rows="4" required placeholder="Write your review..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="rating">Rating:</label>
+                <select id="rating" name="rating" required>
+                    <option value="1">1 Star ★☆☆☆☆</option>
+                    <option value="2">2 Stars ★★☆☆☆</option>
+                    <option value="3">3 Stars ★★★☆☆</option>
+                    <option value="4">4 Stars ★★★★☆</option>
+                    <option value="5">5 Stars ★★★★★</option>
+                </select>
+            </div>
+            <button type="submit" class="submit-review">Submit Review</button>
+        </form>
+    </main>
+    <footer>
+        <p>© 2025 HBNB Evolution. All rights reserved.</p>
+    </footer>
 </body>
 </html>
