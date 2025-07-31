@@ -1,7 +1,9 @@
-from flask import Flask, render_template
+from flask import render_template
+from flask_cors import CORS
 from app import create_app
 
 app = create_app()
+CORS(app)  # <= Ajoute cette ligne juste après la création de app
 
 @app.route('/')
 def index():

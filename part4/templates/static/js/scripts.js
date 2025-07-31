@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('login-form');
     const errorMessage = document.getElementById('login-error');
+    console.log("JS chargé !");
 
     if (loginForm) {
         loginForm.addEventListener('submit', async (event) => {
@@ -10,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const password = loginForm.elements['password'].value;
 
             try {
-                const response = await fetch('http://localhost:5001/api/v1/login', {
+                const response = await fetch('http://127.0.0.1:5000/api/v1/auth/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
