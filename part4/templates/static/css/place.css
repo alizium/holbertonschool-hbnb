@@ -1,108 +1,115 @@
-/* Styles spécifiques à la page place.html */
-
-.place-title {
-    text-align: center;
-    font-size: 2.4rem;
-    margin: 36px 0 26px 0;
-    font-weight: bold;
-    color: #232323;
+body {
+    background: #23252a;
+    color: #f4f4f6;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .place-details {
-    max-width: 1100px;
-    margin: 0 auto 25px auto;
-    padding: 32px 28px;
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-    font-size: 1.19rem;
+    max-width: 700px;
+    margin: 40px auto 0 auto;
+    padding: 32px 36px;
+    background: rgba(28, 28, 34, 0.98);
+    border-radius: 18px;
+    box-shadow: 0 6px 48px 0 rgba(0,0,0,0.25);
+    text-align: center;
 }
 
-.place-info p {
-    margin: 10px 0;
-}
-
-.reviews-section {
-    max-width: 1100px;
-    margin: 0 auto 25px auto;
-}
-
-.reviews-section h2,
-.add-review-section h2 {
-    font-size: 1.35rem;
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #232323;
-}
-
-.review-card {
-    margin: 20px 0;
-    padding: 18px 24px;
-    background: #fff;
-    border-radius: 12px;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    font-size: 1.08rem;
-}
-
-.add-review-section {
-    max-width: 1100px;
-    margin: 0 auto 60px auto;
-}
-
-.add-review-form {
-    display: flex;
-    flex-direction: column;
-    gap: 19px;
-}
-
-.form-group label {
-    font-weight: bold;
-    margin-bottom: 6px;
+.place-image {
+    max-width: 380px;
+    width: 100%;
+    border-radius: 18px;
+    margin-bottom: 36px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.23);
     display: block;
-    font-size: 1.11rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-textarea,
-select {
-    width: 100%;
-    padding: 9px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 1rem;
-    background: #fafafa;
-    resize: vertical;
-    transition: border 0.2s;
-}
-
-textarea:focus,
-select:focus {
-    border: 1.5px solid #ff9800;
-    outline: none;
-}
-
-.submit-review {
-    margin-top: 12px;
-    width: 100%;
-    background: #ffa300;
+h1, .place-title {
+    font-size: 2.4em;
+    font-weight: 900;
+    margin-bottom: 18px;
     color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 11px 0;
-    font-size: 1.07rem;
+    letter-spacing: 1px;
+}
+
+.place-host {
+    font-size: 1.12em;
+    margin: 16px 0 0 0;
+    color: #ffb347;
+    font-weight: 700;
+}
+.place-desc {
+    font-size: 1.18em;
+    margin: 22px 0 18px 0;
+    color: #e0e0e0;
+    font-weight: 400;
+}
+.place-price {
+    font-size: 1.15em;
+    margin: 18px 0 6px 0;
+    font-weight: 700;
+    color: #fff;
+}
+.place-amenities-title {
+    font-size: 1.15em;
     font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 2px 7px rgba(0,0,0,0.07);
-    transition: background 0.2s;
+    margin-top: 28px;
+    margin-bottom: 8px;
+    color: #e2e2e2;
+    letter-spacing: 0.5px;
+}
+.place-amenities-list {
+    margin-bottom: 22px;
+    padding: 0;
+    list-style: none;
+    color: #ffdd8c;
+    font-size: 1.06em;
+}
+.place-amenities-list li {
+    margin-bottom: 4px;
+    display: inline-block;
+    background: #292b32;
+    color: #ffdd8c;
+    padding: 7px 16px;
+    border-radius: 12px;
+    margin-right: 8px;
+    font-weight: 500;
 }
 
-.submit-review:hover {
-    background: #ff8c00;
+.place-reviews-title {
+    font-size: 1.20em;
+    font-weight: bold;
+    margin: 40px 0 12px 0;
+    color: #c0e0fd;
+}
+.place-reviews-list {
+    margin-bottom: 24px;
+    padding: 0;
+    list-style: none;
+}
+.place-reviews-list li {
+    background: #26282f;
+    color: #e1e1e1;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    padding: 13px 24px;
+    text-align: left;
+}
+.place-reviews-list b {
+    color: #66ffb7;
+}
+.no-review {
+    color: #a7adb7;
+    margin-bottom: 16px;
+    font-style: italic;
 }
 
-@media (max-width: 900px) {
-    .place-details, .reviews-section, .add-review-section {
-        margin: 0 8px 25px 8px;
-        padding: 15px 6px;
-    }
+.add-review-title {
+    font-size: 1.22em;
+    font-weight: 800;
+    color: #fff5be;
+    margin: 36px 0 12px 0;
 }

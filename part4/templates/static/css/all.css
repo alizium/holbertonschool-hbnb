@@ -1,83 +1,327 @@
+:root {
+  --main-bg: #171a21;
+  --card-bg: #232631;
+  --primary: #6c63ff;
+  --primary-light: #8b82ff;
+  --accent: #ffd166;
+  --text-main: #fff;
+  --text-secondary: #b8bdd6;
+  --border: #2b2e3c;
+  --shadow: 0 2px 16px 0 #0007;
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f7f7f7;
-    color: #222;
-    min-height: 100vh;
-    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    background: var(--main-bg);
+    color: var(--text-main);
 }
 
-/* HEADER */
 .header {
+    background: var(--card-bg);
+    padding: 20px 48px 20px 48px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: orange;
-    padding: 10px 32px;
-    min-height: 60px;
-    box-sizing: border-box;
+    box-shadow: var(--shadow);
+    border-bottom: 2px solid var(--border);
 }
-
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 12px;
 }
-
 .logo {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
+    height: 52px;
+    margin-right: 18px;
+    filter: drop-shadow(0 1px 2px #0003);
 }
-
 .brand {
-    font-size: 2rem;
+    font-size: 2.3em;
     font-weight: bold;
-    color: #222;
+    color: var(--primary);
+    letter-spacing: 1px;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    text-shadow: 0 2px 18px var(--primary-light);
 }
-
 .login-button {
-    font-weight: 500;
     color: #fff;
-    background: transparent;
+    background: var(--primary);
     border: none;
-    font-size: 1.1rem;
-    margin-left: 24px;
-    cursor: pointer;
+    font-size: 1.18em;
+    border-radius: 24px;
+    padding: 10px 22px;
     text-decoration: none;
+    margin-left: auto;
+    font-weight: 500;
+    box-shadow: 0 2px 10px #6c63ff40;
+    transition: background 0.19s, color 0.15s;
 }
-
 .login-button:hover {
-    text-decoration: underline;
+    background: var(--accent);
+    color: #232631;
 }
 
-/* FOOTER */
-.footer {
-    width: 100vw;
+main {
     text-align: center;
-    padding: 30px 0;
-    background: #faf8f7;
-    color: #ff9000;
-    font-size: 1.1rem;
-    position: fixed;
-    left: 0;
-    bottom: 0;
+    margin-top: 56px;
+}
+h1, .place-title {
+    font-size: 2.7em;
+    margin-bottom: 25px;
+    color: var(--primary-light);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 12px #0005;
+}
+.filter {
+    margin-bottom: 38px;
+    font-size: 1.17em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--text-secondary);
+}
+label {
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+select, input[type="text"], textarea {
+    background: var(--main-bg);
+    color: var(--text-main);
+    border: 1.4px solid var(--border);
+    border-radius: 8px;
+    padding: 9px 13px;
+    font-size: 1.05em;
+    margin-bottom: 7px;
+    font-family: inherit;
+    transition: border 0.18s, background 0.18s;
+}
+select:focus, input:focus, textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+    background: #21242e;
 }
 
-@media (max-width: 700px) {
-    .header {
-        padding: 10px 10px;
-    }
-    .brand {
-        font-size: 1.3rem;
-    }
-    .logo {
-        width: 40px;
-        height: 40px;
-    }
-    .footer {
-        font-size: 0.9rem;
-        padding: 14px 0;
-    }
+#places-container {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin-top: 36px;
+    flex-wrap: wrap;
+}
+.place-card {
+    background: var(--card-bg);
+    box-shadow: var(--shadow);
+    border-radius: 20px;
+    padding: 36px 28px 30px 28px;
+    width: 340px;
+    text-align: center;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1.7px solid var(--border);
+    transition: box-shadow 0.18s, transform 0.13s, border 0.13s;
+    position: relative;
+}
+.place-card:hover {
+    box-shadow: 0 8px 36px #6c63ff45;
+    border-color: var(--primary-light);
+    transform: translateY(-4px) scale(1.027);
+}
+.place-card h2 {
+    margin-bottom: 14px;
+    font-size: 1.33em;
+    font-weight: 600;
+    color: var(--primary);
+    letter-spacing: 0.25px;
+    text-shadow: 0 2px 9px #6c63ff22;
+}
+.place-card p {
+    margin-bottom: 18px;
+    color: var(--text-secondary);
+    font-size: 1.09em;
+    line-height: 1.55;
+}
+.place-img, .place-carousel-img {
+    width: 96%;
+    max-width: 250px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 17px;
+    display: block;
+    box-shadow: 0 4px 22px #0005;
+}
+
+.carousel-container {
+    text-align: center;
+    margin-bottom: 14px;
+    position: relative;
+    width: 100%;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--main-bg);
+    border: none;
+    font-size: 1.4em;
+    color: var(--primary-light);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    opacity: 0.81;
+    transition: background 0.18s, color 0.13s;
+    z-index: 2;
+    box-shadow: 0 2px 8px #0003;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--primary-light);
+    font-weight: bold;
+}
+.carousel-arrow.left {
+    left: -16px;
+}
+.carousel-arrow.right {
+    right: -16px;
+}
+.carousel-arrow:hover {
+    background: var(--primary-light);
+    color: #232631;
+}
+
+.details-btn {
+    background: var(--primary);
+    color: #fff;
+    padding: 13px 30px;
+    border: none;
+    border-radius: 11px;
+    font-size: 1.12em;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 13px;
+    margin-bottom: 6px;
+    box-shadow: 0 2px 9px #6c63ff44;
+    transition: background 0.15s, transform 0.12s, color 0.14s;
+}
+.details-btn:hover {
+    background: var(--accent);
+    color: #232631;
+    border: 1.2px solid var(--primary);
+    transform: scale(1.05);
+}
+
+footer.footer {
+    background: var(--card-bg);
+    color: var(--primary-light);
+    text-align: center;
+    font-size: 1.10em;
+    padding: 23px 0 17px 0;
+    margin-top: 63px;
+    letter-spacing: 0.2px;
+    border-radius: 0 0 13px 13px;
+    border-top: 2px solid var(--border);
+}
+
+.add-review-form,
+#review-form {
+    margin: 0 auto;
+    background: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    padding: 30px 22px 18px 22px;
+    width: 99%;
+    max-width: 410px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+label {
+    margin-bottom: 6px;
+    font-weight: 700;
+    color: var(--primary);
+    text-shadow: 0 1px 3px #0005;
+}
+
+textarea, select, input[type="text"] {
+    width: 100%;
+    border: 1.3px solid var(--primary-light);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 1.07em;
+    margin-bottom: 4px;
+    font-family: inherit;
+    background: #20232a;
+    color: #fff;
+    transition: border-color 0.16s, background 0.15s;
+}
+textarea:focus, select:focus, input:focus {
+    border-color: var(--primary);
+    outline: none;
+    background: #262a38;
+}
+
+.submit-review {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 9px;
+    font-size: 1.08em;
+    padding: 12px 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.13s, color 0.11s;
+}
+.submit-review:hover {
+    background: var(--accent);
+    color: #232631;
+}
+
+.reviews-section, .add-review-section {
+    margin-top: 38px;
+    margin-bottom: 34px;
+    text-align: left;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.review-card {
+    background: #1b1d25;
+    border-radius: 10px;
+    padding: 19px 15px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px #0003;
+    color: var(--text-main);
+    font-size: 1.06em;
+    line-height: 1.48;
+    border-left: 3.2px solid var(--primary);
+    transition: border-color 0.16s;
+}
+.review-card p {
+    color: var(--text-secondary);
+    margin: 4px 0;
+}
+.review-card strong {
+    color: var(--accent);
+    font-weight: bold;
+    letter-spacing: 0.01em;
 }

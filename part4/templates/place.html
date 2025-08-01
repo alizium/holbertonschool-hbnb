@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Beautiful Beach House – hbnb</title>
+    <title>Détail du logement – hbnb</title>
     <link rel="stylesheet" href="static/css/all.css">
     <link rel="stylesheet" href="static/css/place.css">
     <link rel="icon" href="images/icon.png">
@@ -13,57 +13,44 @@
             <img src="images/logo.png" alt="Logo" class="logo">
             <span class="brand"></span>
         </div>
-        <a href="login.html" class="login-button">Login</a>
+        <a href="login.html" class="login-button">Déconnexion</a>
     </header>
     <main>
-        <h1 class="place-title">Beautiful Beach House</h1>
-        <section class="place-details">
-            <div class="place-info">
-                <p><strong>Host:</strong> John Doe</p>
-                <p><strong>Price per night:</strong> $150</p>
-                <p><strong>Description:</strong> A beautiful beach house with amazing views of the ocean and direct access to the sand. Spacious, clean and perfect for families or couples.</p>
-                <p><strong>Amenities:</strong> WiFi, Pool, Air Conditioning, Private Parking</p>
-            </div>
-        </section>
+        <!-- Ce bloc sera rempli dynamiquement par JS -->
+        <section id="place-details"></section>
 
-        <section class="reviews-section">
-            <h2>Reviews</h2>
+        <!-- Bloc d’avis, généré aussi par JS -->
+        <!-- Les avis seront inclus dans place-details OU tu peux garder une section #reviews séparée si tu préfères -->
 
-            <div class="review-card">
-                <p><strong>Jane Smith:</strong></p>
-                <p>Great place to stay!</p>
-                <p>Rating: ★★★★☆</p>
-            </div>
-            <div class="review-card">
-                <p><strong>Robert Brown:</strong></p>
-                <p>Amazing location and very comfortable.</p>
-                <p>Rating: ★★★★★</p>
-            </div>
-        </section>
-
-        <section class="add-review-section">
-            <h2>Add a Review</h2>
-            <form class="add-review-form" action="#" method="POST">
+        <!-- Formulaire d’ajout d’avis (caché si non connecté) -->
+        <section id="add-review" style="display:none;">
+            <h2>Ajouter un avis</h2>
+            <form id="review-form">
                 <div class="form-group">
-                    <label for="review">Your Review:</label>
-                    <textarea id="review" name="review" rows="3" required placeholder="Write your review..."></textarea>
+                    <label for="review-text">Votre avis :</label>
+                    <textarea id="review-text" rows="3" required placeholder="Écris ton avis..."></textarea>
                 </div>
+                <!-- Optionnel : champ note/étoiles -->
+                <!--
                 <div class="form-group">
-                    <label for="rating">Rating:</label>
-                    <select id="rating" name="rating" required>
-                        <option value="1">1 Star ★☆☆☆☆</option>
-                        <option value="2">2 Stars ★★☆☆☆</option>
-                        <option value="3">3 Stars ★★★☆☆</option>
-                        <option value="4">4 Stars ★★★★☆</option>
-                        <option value="5">5 Stars ★★★★★</option>
+                    <label for="review-rating">Note :</label>
+                    <select id="review-rating" required>
+                        <option value="1">1 ★</option>
+                        <option value="2">2 ★★</option>
+                        <option value="3">3 ★★★</option>
+                        <option value="4">4 ★★★★</option>
+                        <option value="5">5 ★★★★★</option>
                     </select>
                 </div>
-                <button type="submit" class="submit-review">Submit Review</button>
+                -->
+                <button type="submit" class="submit-review">Envoyer</button>
             </form>
         </section>
     </main>
-    <footer>
-        <p>© 2025 HBNB Evolution. All rights reserved.</p>
+    <footer class="footer">
+        © 2025 - All rights reserved.
     </footer>
+    <!-- Charge le JS à la fin -->
+    <script src="static/js/place.js"></script>
 </body>
 </html>

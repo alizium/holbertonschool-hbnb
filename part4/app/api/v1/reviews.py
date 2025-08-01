@@ -95,9 +95,26 @@ class ReviewResource(Resource):
 
 @api.route('/places/<place_id>/reviews')
 class PlaceReviewList(Resource):
+    def options(self, place_id):
+        """Réponse au preflight CORS"""
+        return '', 200
+
     @api.marshal_list_with(review_output_model)
     def get(self, place_id):
         reviews = HBnBFacade().get_reviews_by_place(place_id)
         if reviews is None:
             return {'error': 'Place not found'}, 404
         return [review_to_dict(r) for r in reviews], 200
+
+    @api.expect(review_model, validate=True)
+    @api.response(201, 'Review created')
+    @api.response(400, 'Invalid input')
+    @jwt_required()
+    def post(self, place_id):
+        data = api.payload
+        try:
+            # Ajoute l'id du logement à la data
+            review = HBnBFacade().create_review({**data, "place_id": place_id})
+        except Exception as e:
+            return {'error': str(e)}, 400
+        return review_to_dict(review), 201
