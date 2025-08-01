@@ -184,7 +184,7 @@ part4/
 git clone https://github.com/alizium/holbertonschool-hbnb.git
 cd holbertonschool-hbnb/part4
 
-# 2. (Optionnel) Environnement virtuel
+# 2. (Optionnel mais recommander) Environnement virtuel
 python3 -m venv venv
 source venv/bin/activate
 
